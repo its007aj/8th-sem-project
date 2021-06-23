@@ -29,7 +29,6 @@ numpy==1.20.2
 panda==0.3.1
 pandas==1.2.4
 parso==0.8.2
-pickleshare==0.7.5
 prompt-toolkit==3.0.18
 pycparser==2.20
 Pygments==2.8.1
@@ -54,5 +53,3 @@ wcwidth==0.2.5
 Werkzeug==1.0.1
 zipp==3.4.1
 gunicorn==19.9.0
-nltk.tokenize==3.6.2
-nltk.stem.wordnet
