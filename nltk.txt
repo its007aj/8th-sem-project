@@ -1,2 +1,2 @@
 stopwords
-word-tokenize
+tokenize
