@@ -2,8 +2,6 @@ appdirs==1.4.4
 asgiref==3.3.4
 backcall==0.2.0
 bcrypt==3.2.0
-beautifulsoup4==4.9.3
-bs4==0.0.1
 certifi==2020.12.5
 cffi==1.14.5
 chardet==4.0.0
@@ -31,7 +29,6 @@ numpy==1.20.2
 panda==0.3.1
 pandas==1.2.4
 parso==0.8.2
-pickleshare==0.7.5
 prompt-toolkit==3.0.18
 pycparser==2.20
 Pygments==2.8.1
