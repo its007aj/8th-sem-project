@@ -1,4 +1,4 @@
 wordnet
-nltk.corpus
-nltk.tokenize
+corpus
+tokenize
 stem.wordnet
