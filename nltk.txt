@@ -1,4 +1,4 @@
 wordnet
 corpus
 tokenize
-stem.wordnet
+stem
