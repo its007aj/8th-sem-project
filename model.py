@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[87]:
-
-
 import numpy as np
 import pandas as pd
 import nltk
@@ -14,21 +8,8 @@ from ast import literal_eval
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-
-# In[88]:
-
-
 data=pd.read_csv('goibibo.csv')
-
-
-# In[89]:
-
-
 data['tags']=data['additional_info']+data['hotel_facilities']
-
-
-# In[90]:
-
 
 def cosine(city, hotelname):
     city = city.title()
@@ -43,7 +24,6 @@ def cosine(city, hotelname):
     df_tfidf_m2m.index = [index_to_hotel_id[idx] for idx in df_tfidf_m2m.index]
     df_tfidf_m2m.iloc[0].sort_values(ascending=False)[:10]
     first_column = df_tfidf_m2m.iloc[:, 0]
-    
     new_df=df_tfidf_m2m[hotelname].sort_values(ascending=False)
     data['City'] = data['City'].str.lower()
     country = data[data['City']==city.lower()]
@@ -55,21 +35,14 @@ def cosine(city, hotelname):
     #print("*****************************************")
     #print(df)
     #country.where[country.values==df.values]
-    
-    
     df.columns =['Hotel_Name']
     merge=pd.merge(country,df, on=['Hotel_Name'],how='inner')
     #print("*****************************************last********************************")
     merge.sort_values('Ratings', ascending=False, inplace=True)
     merge.reset_index(inplace=True)
     #merge.index=np.arange(1,len(country)+1)
-    
     #print(df)
     return merge[["Hotel_Name", "Ratings", "Hotel_Address","Attractions"]].head().drop_duplicates()
-
-
-# In[95]:
-
 
 def intersection(city, description):
     data['tags']=data['tags'].apply(str)
@@ -107,10 +80,6 @@ def intersection(city, description):
     #print(country.style.hide_index()
     return country[["Hotel_Name", "Ratings", "Hotel_Address","Attractions"]].head().drop_duplicates()
 
-
-# In[105]:
-
-
 def predict(city, hotelname, description):
     df1 = df2 = pd.DataFrame()
     if hotelname!='':
@@ -118,27 +87,6 @@ def predict(city, hotelname, description):
     if description!='':
         df2 = intersection(city, description)
     return pd.concat([df1, df2]).head().drop_duplicates()
-
-
-# In[110]:
-
-
-d = predict('bangalore', 'the tavern', '')
-
-
-# In[111]:
-
-
-d
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 
