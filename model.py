@@ -10,6 +10,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 data=pd.read_csv('goibibo.csv')
 data['tags']=data['additional_info']+data['hotel_facilities']
+data['Attractions'] = data['Attractions'].fillna("local area")
 
 def cosine(city, hotelname):
     city = city.title()
@@ -50,7 +51,6 @@ def intersection(city, description):
     data['City'] = data['City'].str.lower()
     data['tags'] = data['tags'].str.lower()
     #print(data['tags'])
-    data['Attractions'] = data['Attractions'].fillna("local area")
     description = description.lower()
     word_tokenize(description)
     stop_words = stopwords.words('english')
