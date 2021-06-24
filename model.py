@@ -86,7 +86,9 @@ def predict(city, hotelname, description):
         df1 = cosine(city, hotelname)
     if description!='':
         df2 = intersection(city, description)
-    return pd.concat([df1, df2]).head().drop_duplicates()
+    d = pd.concat([df1, df2]).head().drop_duplicates()
+    d.index= np.arange(1, len(d)+1)
+    return d
 
 
 
