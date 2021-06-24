@@ -1,70 +1,63 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Title</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-	body
-	{
-	 background-image:
-		linear-gradient(rgba(0,0,0,0.6),
-				rgba(0,0,0,0.6)),
- url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi1OTsTwYZknyhNvBqFKgpgc0589zrNdtCAxLuBu1LU9BGJaW2&s');
-    background-repeat: no-repeat;
-	
-	background-size:fixed;
-	
-	/* Center and scale the image nicely */
- 
-	background-position: center;
-	background-size: 100% 100%;
-    background-attachment: fixed;
-	text-align:center;
-	}
-	h2
-	{
-    text-align: center;
-}
-
-table{
-color:white;
-    margin: auto;
-background-image:linear-gradient(to right,#73d1d1);
-opacity:1;
-    border:0;
-    border-collapse: collapse;
-    border-radius: 20px;
-}
-
-th{
-
-color:white;
-font-size:25px;
-    padding:10px;
-	border:0;
-opacity:1;
-	text-align:center;
-    /* border-style: none; */
-}
-
-td{
-border:0;
-opacity:1;
-color:white;
-font-size:25px;
-padding:30px;
-/*background-color:;*/
-/* border-style: none; */
-}
-	</style>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap" rel="stylesheet">
-</head>
-<body>
-<h2 style="color:white";>You can check out these...</h2>
-{% for table in tables %}
-    {{ table|safe }}
-{% endfor %}
-</body>
+   <head>
+      <title>Title</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+         body
+         {
+         background-image:
+         linear-gradient(rgba(0,0,0,0.6),
+         rgba(0,0,0,0.6)),
+         url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi1OTsTwYZknyhNvBqFKgpgc0589zrNdtCAxLuBu1LU9BGJaW2&s');
+         background-repeat: no-repeat;
+         background-size:fixed;
+         /* Center and scale the image nicely */
+         background-position: center;
+         background-size: 100% 100%;
+         background-attachment: fixed;
+         text-align:center;
+         }
+         h2
+         {
+         text-align: center;
+         }
+         table{
+         color:white;
+         margin: auto;
+         background-image:linear-gradient(to right,#73d1d1);
+         opacity:1;
+         border:0;
+         border-collapse: collapse;
+         border-radius: 20px;
+         }
+         th{
+         color:white;
+         font-size:25px;
+         padding:10px;
+         border:0;
+         opacity:1;
+         text-align:center;
+         /* border-style: none; */
+         }
+         td{
+         border:0;
+         opacity:1;
+         color:white;
+         font-size:25px;
+         padding:30px;
+         /*background-color:;*/
+         /* border-style: none; */
+         }
+      </style>
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap" rel="stylesheet">
+   </head>
+   <body>
+      <h2 style="color:white";>You can check out these...</h2>
+      {% for table in tables %}
+      {{ table|safe }}
+      {% endfor %}
+   </body>
 </html>
