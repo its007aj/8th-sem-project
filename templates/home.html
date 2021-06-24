@@ -1,82 +1,82 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Welcome</title>
-	<meta charset="UTF-8">
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap" rel="stylesheet"> 
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <style>
- body {
-			width: 100 vw;
-			height: 100 vh;
-            background-image: 
-			/*linear-gradient(rgba(45,66,43,0.4),rgba(45,78,99,0.4)),*/
-			url("https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
-			background-repeat: no-repeat;
-			
-			background-size: 100% 200%;
-            text-align: center;
-            padding: 0px;
-			
-        }
-		#name{
-    display: block;
-    margin: auto;
-    margin-top: 20px;
-    width: 500px;
-    border-style: none;
-    border-radius: 5px;
-    padding: 10px;
-    height:auto;
-    font-size: 20px;
-}
-h1{
-    font-size: 50px;
-    text-align: center;
-    border: 1px solid transparent;
-    margin: auto;
-    margin-top: 10%;
-    padding: 50px;
-    color: white;
-	font-family: 'serif';
-}
-button{
-    display: block;
-    margin: auto;
-    width: 500px;
-    border-style: none;
-    border-radius: 5px;
-    margin-top: 20px;
-    padding: 10px;
-    font-family: 'Sedgwick Ave', cursive;
-    font-size: 20px;
-}
-		
-</style>
-
-    </head>
-    <body>
-	{% block script %}
-	{% endblock %}
-	<h2 style="font-size:40px;color:white;font-family:'serif';background-color:#1594A3; background-image: linear-gradient(
-        45deg,
-        #CA4246 16.666%, 
-        #E16541 16.666%, 
-        #E16541 33.333%, 
-        #F18F43 33.333%, 
-        #F18F43 50%, 
-        #8B9862 50%, 
-        #8B9862 66.666%, 
-        #476098 66.666%, 
-        #476098 83.333%, 
-        #A7489B 83.333%);">HotelTripHub🏬</h2>
-        <div style="padding-left:380px"><div style="background-color:#f76e05 ;border-style:none;border-radius:20px;width:600px;height:50px"><h3 style='opacity:1;padding: 10px;font-size:30px;color:white'>What's your name ?</h3></div>
-        </div><form action="{{ url_for('details') }}" method="POST">
-            <input type:"text" id="name" name="alias" placeholder="Name" required>
-            <br>
-            <button type:"submit" class="go">GO🚀</button>
-        </form>
-    </body>
+   <head>
+      <title>Welcome</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <style>
+         body {
+         width: 100 vw;
+         height: 100 vh;
+         background-image: 
+         /*linear-gradient(rgba(45,66,43,0.4),rgba(45,78,99,0.4)),*/
+         url("https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
+         background-repeat: no-repeat;
+         background-size: 100% 200%;
+         text-align: center;
+         padding: 0px;
+         }
+         #name{
+         display: block;
+         margin: auto;
+         margin-top: 20px;
+         width: 500px;
+         border-style: none;
+         border-radius: 5px;
+         padding: 10px;
+         height:auto;
+         font-size: 20px;
+         }
+         h1{
+         font-size: 50px;
+         text-align: center;
+         border: 1px solid transparent;
+         margin: auto;
+         margin-top: 10%;
+         padding: 50px;
+         color: white;
+         font-family: 'serif';
+         }
+         button{
+         display: block;
+         margin: auto;
+         width: 500px;
+         border-style: none;
+         border-radius: 5px;
+         margin-top: 20px;
+         padding: 10px;
+         font-family: 'Sedgwick Ave', cursive;
+         font-size: 20px;
+         }
+      </style>
+   </head>
+   <body>
+      {% block script %}
+      {% endblock %}
+      <h2 style="font-size:40px;color:white;font-family:'serif';background-color:#1594A3; background-image: linear-gradient(
+         45deg,
+         #CA4246 16.666%, 
+         #E16541 16.666%, 
+         #E16541 33.333%, 
+         #F18F43 33.333%, 
+         #F18F43 50%, 
+         #8B9862 50%, 
+         #8B9862 66.666%, 
+         #476098 66.666%, 
+         #476098 83.333%, 
+         #A7489B 83.333%);">HotelTripHub🏬</h2>
+      <div style="padding-left:380px">
+         <div style="background-color:#f76e05 ;border-style:none;border-radius:20px;width:600px;height:50px">
+            <h3 style='opacity:1;padding: 10px;font-size:30px;color:white'>What's your name ?</h3>
+         </div>
+      </div>
+      <form action="{{ url_for('details') }}" method="POST">
+         <input type:"text" id="name" name="alias" placeholder="Name" required>
+         <br>
+         <button type:"submit" class="go">GO🚀</button>
+      </form>
+   </body>
 </html>
