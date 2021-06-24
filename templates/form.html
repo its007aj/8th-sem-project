@@ -2,8 +2,6 @@
 <html>
    <head>
       <title>Form</title>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap" rel="stylesheet">
       <style>
@@ -18,7 +16,6 @@
          padding: 0px;
          }
          #bottom{
-         position:absolute;
          bottom:150px;
          left:420px;
          }
@@ -70,15 +67,21 @@
                <td>
                   <div class="ques">Where do you want to go {{ name }} ?</div>
                </td>
-               <td id="text">
+               <td>
                   <input type="text" name="where" id="where" placeholder="speak or type here..." required onclick="record()">
                </td>
             </tr>
             <tr>
                <td>
+                  <div class="ques">What is the Hotel name ?</div>
+               </td>
+               <td><input type="text" name="hotelname" id="hotelname" placeholder="speak or type here..." onclick="record2()"></td>
+            </tr>
+            <tr>
+               <td>
                   <div class="ques">What is the purpose ?</div>
                </td>
-               <td id="text2"><input type="text" name="why" id="why" placeholder="speak or type here..." required onclick="record2()"></td>
+               <td><input type="text" name="purpose" id="purpose" placeholder="speak or type here..." onclick="record3()"></td>
             </tr>
          </table>
          <div id="bottom"><button type="submit" >Take me there🚀</button></div>
@@ -101,9 +104,19 @@
          
              recognition.onresult = function(event) {
                  // console.log(event);
-                 document.getElementById('why').value = event.results[0][0].transcript;
+                 document.getElementById('hotelname').value = event.results[0][0].transcript;
              }
              recognition.start();
+         }
+         function record3() {
+         var recognition = new webkitSpeechRecognition();
+         recognition.lang = "en-GB";
+         
+         recognition.onresult = function(event) {
+         // console.log(event);
+         document.getElementById('purpose').value = event.results[0][0].transcript;
+         }
+         recognition.start();
          }
       </script>
    </body>
