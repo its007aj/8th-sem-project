@@ -1,119 +1,110 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Form</title>
-	<meta charset="UTF-8">
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap" rel="stylesheet"> 
-		<style>
-		body{
-			width: 100vw;
-			height: 100vh;
-            		background-image:
-			url("https://images.unsplash.com/photo-1530521954074-e64f6810b32d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGxhbmUlMjB0cmF2ZWx8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80");
-			background-repeat: no-repeat;
-			background-size: 100% 100%;
-            text-align: center;
-            padding: 0px;
-			
-}
-
-#bottom{
-position:absolute;
-bottom:150px;
-left:420px;
-}
-
-table{
-    margin: auto;
-    margin-top: 10%;
-}
-
-td{
-font-family:'serif';
-font-size:40px;
-color:white;
-    padding: 20px;
-	font-family: 'Trebuchet MS', cursive;
-
-}
-
-input{
-    display: block;
-    margin: auto;
-    margin-top: 20px;
-    width: 500px;
-    padding: 10px;
-    height:auto;
-	border-radius:5px;
-
-    font-family: 'fantasy', cursive;
-    font-size: 20px;
-}
-.ques{
-	background-color:#f76e05 ;
-	padding:3px;
-	border-radius:5px;
-	font-family:'serif';
-
-	}
-
-button{
-    display: block;
-    margin: auto;
-    width: 500px;
-    border-radius: 5px;
-    margin-top: 20px;
-    padding: 10px;
-    font-family: 'fantasy', cursive;
-    font-size: 20px;
-	bottom: 0px;
-
-}
-</style>
-    </head>
-    <body>
-        <form action="{{ url_for('destination') }}" method='POST'>
-            <table>
-                <tr>
-                    <td><div class="ques">Where do you want to go {{ name }} ?</div></td>
-                    <td id="text">
-                        <input type="text" name="where" id="where" placeholder="speak or type here..." required onclick="record()">
-                    </td>
-                </tr>
-                <tr>
-                    <td><div class="ques">What is the purpose ?</div></td>
-                    <td id="text2"><input type="text" name="why" id="why" placeholder="speak or type here..." required onclick="record2()"></td>
-                </tr>
-
-            </table>
-			                
-                    <div id="bottom"><button type="submit" >Take me there🚀</button></div>
-             
-        </form>
-        <script>
-            function record() {
-                var recognition = new webkitSpeechRecognition();
-                recognition.lang = "en-GB";
-    
-                recognition.onresult = function(event) {
-                    // console.log(event);
-                    document.getElementById('where').value = event.results[0][0].transcript;
-                }
-                recognition.start();
-    
-            }
-    function record2() {
-                var recognition = new webkitSpeechRecognition();
-                recognition.lang = "en-GB";
-    
-                recognition.onresult = function(event) {
-                    // console.log(event);
-                    document.getElementById('why').value = event.results[0][0].transcript;
-                }
-                recognition.start();
-    }
-        </script>
-    </body>
+   <head>
+      <title>Form</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap" rel="stylesheet">
+      <style>
+         body{
+         width: 100vw;
+         height: 100vh;
+         background-image:
+         url("https://images.unsplash.com/photo-1530521954074-e64f6810b32d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGxhbmUlMjB0cmF2ZWx8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80");
+         background-repeat: no-repeat;
+         background-size: 100% 100%;
+         text-align: center;
+         padding: 0px;
+         }
+         #bottom{
+         position:absolute;
+         bottom:150px;
+         left:420px;
+         }
+         table{
+         margin: auto;
+         margin-top: 10%;
+         }
+         td{
+         font-family:'serif';
+         font-size:40px;
+         color:white;
+         padding: 20px;
+         font-family: 'Trebuchet MS', cursive;
+         }
+         input{
+         display: block;
+         margin: auto;
+         margin-top: 20px;
+         width: 500px;
+         padding: 10px;
+         height:auto;
+         border-radius:5px;
+         font-family: 'fantasy', cursive;
+         font-size: 20px;
+         }
+         .ques{
+         background-color:#f76e05 ;
+         padding:3px;
+         border-radius:5px;
+         font-family:'serif';
+         }
+         button{
+         display: block;
+         margin: auto;
+         width: 500px;
+         border-radius: 5px;
+         margin-top: 20px;
+         padding: 10px;
+         font-family: 'fantasy', cursive;
+         font-size: 20px;
+         bottom: 0px;
+         }
+      </style>
+   </head>
+   <body>
+      <form action="{{ url_for('destination') }}" method='POST'>
+         <table>
+            <tr>
+               <td>
+                  <div class="ques">Where do you want to go {{ name }} ?</div>
+               </td>
+               <td id="text">
+                  <input type="text" name="where" id="where" placeholder="speak or type here..." required onclick="record()">
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <div class="ques">What is the purpose ?</div>
+               </td>
+               <td id="text2"><input type="text" name="why" id="why" placeholder="speak or type here..." required onclick="record2()"></td>
+            </tr>
+         </table>
+         <div id="bottom"><button type="submit" >Take me there🚀</button></div>
+      </form>
+      <script>
+         function record() {
+             var recognition = new webkitSpeechRecognition();
+             recognition.lang = "en-GB";
+         
+             recognition.onresult = function(event) {
+                 // console.log(event);
+                 document.getElementById('where').value = event.results[0][0].transcript;
+             }
+             recognition.start();
+         
+         }
+         function record2() {
+             var recognition = new webkitSpeechRecognition();
+             recognition.lang = "en-GB";
+         
+             recognition.onresult = function(event) {
+                 // console.log(event);
+                 document.getElementById('why').value = event.results[0][0].transcript;
+             }
+             recognition.start();
+         }
+      </script>
+   </body>
 </html>
