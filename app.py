@@ -16,8 +16,8 @@ def details():
 def destination():
     l = [str(x) for x in request.form.values()]
     print(l)
-    import naya
-    d = naya.predict(l[0], l[1])
+    import model
+    d = model.predict(l[0], l[1])
     if d.empty:
         return render_template('home_again.html')
     else:
