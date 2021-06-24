@@ -15,9 +15,12 @@ def details():
 @app.route("/destination", methods=['GET','POST'])
 def destination():
     l = [str(x) for x in request.form.values()]
-    print(l)
+    #print(l)
+    #l[0] city
+    #l[1] hotelname
+    #l[2] description
     import model
-    d = model.predict(l[0], l[1])
+    d = model.predict(l[0], l[1], l[2])
     if d.empty:
         return render_template('home_again.html')
     else:
